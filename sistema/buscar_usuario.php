@@ -133,6 +133,14 @@
 ?>
 
 		</table>
+
+		<?php 
+
+		 	if ($total_registro != 0) {
+		 		
+
+
+		 ?>
 		<div class="paginador">
 			<ul>
 
@@ -141,8 +149,8 @@
 						
 					
 				 ?>
-				<li><a href="?pagina=<?php echo 1; ?>">|<</a></li>
-				<li><a href="?pagina=<?php echo $pagina-1; ?>"><<</a></li>
+				<li><a href="?pagina=<?php echo 1; ?>&busqueda=<?php echo $busqueda; ?>">|<</a></li>
+				<li><a href="?pagina=<?php echo $pagina-1; ?>&busqueda=<?php echo $busqueda; ?>"><<</a></li>
 				<?php   
 				}
 				for ($i=1; $i <= $total_paginas; $i++) { 
@@ -150,7 +158,7 @@
 				if ($i == $pagina) {
 					echo '<li class="pageSeleted">'.$i.'</li>';
 				}else{
-					echo '<li><a href="?pagina='.$i.'">'.$i.'</a></li>';
+					echo '<li><a href="?pagina='.$i.'&busqueda='.$busqueda.'">'.$i.'</a></li>';
 				}
 					
 						
@@ -161,13 +169,21 @@
 					
 
 				 ?>
-				<li><a href="?pagina=<?php echo $pagina+1; ?>">>></a></li>
-				<li><a href="?pagina=<?php echo $total_paginas; ?>">>|</a></li>
+				<li><a href="?pagina=<?php echo $pagina+1; ?>&busqueda=<?php echo $busqueda; ?>">>></a></li>
+				<li><a href="?pagina=<?php echo $total_paginas; ?>&busqueda=<?php echo $busqueda; ?>">>|</a></li>
 
 			<?php } ?>
 			</ul>
 
 		</div>
+
+		<?php 
+
+		}else{
+			echo '<h1>No Hay Resultados</h1>';
+		}
+
+		 ?>
 
 	</section>
 	<?php include "includes/footer.php"; ?>

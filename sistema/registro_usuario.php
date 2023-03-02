@@ -39,12 +39,6 @@
 }
 ?>
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -79,10 +73,7 @@
 				$result_rol = mysqli_num_rows($query_rol);
 
 				 ?>
-
-
 				<select name="rol" id="rol">
-
 
 						<?php          
 				if ($result_rol > 0) {
@@ -91,13 +82,9 @@
 					?>
 					<option value="<?php echo $rol["idrol"]; ?>"><?php echo $rol["rol"]; ?> </option>
 					<?php
+				}		
 				}
-				 
-					
-				}
-				?>
-					
-					
+				?>		
 				</select>
 				<input type="submit" value="Crear Usuario" class="btn_save">
 			</form>
