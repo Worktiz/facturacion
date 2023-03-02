@@ -180,7 +180,7 @@
 		<?php 
 
 		}else{
-			echo '<h1>No Hay Resultados</h1>';
+			echo "<h1>No Hay Resultados</h1>";
 		}
 
 		 ?>
